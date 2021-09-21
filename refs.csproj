@@ -75,9 +75,9 @@
       <Content Include="TestData\.git\refs\remotes\origin\master" />
       <Content Include="TestData\.git\refs\tags\v1.0" />
       <Content Include="TestData\.git\refs\tags\v1.1" />
+      <Content Include="TestData\gitFiles.zip" />
     </ItemGroup>
     <ItemGroup>
-      <Folder Include="TestData" />
       <Folder Include="TestData\.git\objects\info" />
       <Folder Include="TestData\.git\objects\pack" />
     </ItemGroup>
