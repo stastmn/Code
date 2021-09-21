@@ -5,7 +5,7 @@ namespace refs
 {
     public static class RefsPrinter
     {
-        private static string _gitPath = @".\\.git";
+        private static string _gitPath = $@".{Path.DirectorySeparatorChar}.git";
         private static string _gitDirectoryPath;
 
         public static void PrintRefs(string gitDirectoryPath = "")
@@ -24,7 +24,8 @@ namespace refs
 
         private static void ProcessPackedRefs()
         {
-            var packedRefsPath = _gitDirectoryPath +  @".\\.git\\packed-refs";
+            var packedRefsPath =
+                $@"{_gitDirectoryPath}.{Path.DirectorySeparatorChar}.git{Path.DirectorySeparatorChar}packed-refs";
             if (!File.Exists(packedRefsPath)) return;
             using (var streamReader = new StreamReader(packedRefsPath))
             {
@@ -51,7 +52,7 @@ namespace refs
 
         private static void ProcessTags()
         {
-            var tagsPath = _gitPath + "\\refs\\tags";
+            var tagsPath = $"{_gitPath}{Path.DirectorySeparatorChar}refs{Path.DirectorySeparatorChar}tags";
             if (!Directory.Exists(tagsPath)) return;
             var files = Directory.GetFiles(tagsPath);
 
@@ -65,7 +66,7 @@ namespace refs
 
         private static void ProcessRemotes()
         {
-            var remotesPath = _gitPath + "\\refs\\remotes";
+            var remotesPath = _gitPath + "" + Path.DirectorySeparatorChar + "refs" + Path.DirectorySeparatorChar + "remotes";
             if (!Directory.Exists(remotesPath)) return;
             var remotes = Directory.GetDirectories(remotesPath);
             foreach (var remote in remotes)
@@ -82,17 +83,18 @@ namespace refs
 
         private static bool IsGitRefsDirectoryExists()
         {
-            return Directory.Exists(_gitDirectoryPath + @".\\.git\\refs");
+            return Directory.Exists(
+                $@"{_gitDirectoryPath}.{Path.DirectorySeparatorChar}.git{Path.DirectorySeparatorChar}refs");
         }
 
         private static bool IsGitDirectoryExists()
         {
-            return Directory.Exists(_gitDirectoryPath + @".\\.git");
+            return Directory.Exists($@"{_gitDirectoryPath}.{Path.DirectorySeparatorChar}.git");
         }
 
         private static void ProcessHeads()
         {
-            var headsPath = _gitPath + "\\refs\\heads";
+            var headsPath = $"{_gitPath}{Path.DirectorySeparatorChar}refs{Path.DirectorySeparatorChar}heads";
             if (!Directory.Exists(headsPath)) return;
             var files = Directory.GetFiles(headsPath);
 
