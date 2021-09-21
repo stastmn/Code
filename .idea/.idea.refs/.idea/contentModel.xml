@@ -14,7 +14,9 @@
       <e p="refs.csproj" t="IncludeRecursive" />
       <e p="refs.sln" t="IncludeFlat" />
       <e p="RefsPrinter.cs" t="Include" />
-      <e p="TestData" t="Include" />
+      <e p="TestData" t="Include">
+        <e p="gitFiles.zip" t="Include" />
+      </e>
     </e>
   </component>
 </project>
