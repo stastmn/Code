@@ -66,7 +66,8 @@ namespace refs
 
         private static void ProcessRemotes()
         {
-            var remotesPath = _gitPath + "" + Path.DirectorySeparatorChar + "refs" + Path.DirectorySeparatorChar + "remotes";
+            var remotesPath = _gitPath + "" + Path.DirectorySeparatorChar + "refs" + Path.DirectorySeparatorChar +
+                              "remotes";
             if (!Directory.Exists(remotesPath)) return;
             var remotes = Directory.GetDirectories(remotesPath);
             foreach (var remote in remotes)
