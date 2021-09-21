@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+    <PropertyGroup>
+        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+        <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+        <ProjectGuid>{D7363219-7477-40C9-AEC0-F4EBC9D44173}</ProjectGuid>
+        <OutputType>Exe</OutputType>
+        <AppDesignerFolder>Properties</AppDesignerFolder>
+        <RootNamespace>refs</RootNamespace>
+        <AssemblyName>refs</AssemblyName>
+        <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+        <FileAlignment>512</FileAlignment>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <DebugSymbols>true</DebugSymbols>
+        <DebugType>full</DebugType>
+        <Optimize>false</Optimize>
+        <OutputPath>bin\Debug\</OutputPath>
+        <DefineConstants>DEBUG;TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <DebugType>pdbonly</DebugType>
+        <Optimize>true</Optimize>
+        <OutputPath>bin\Release\</OutputPath>
+        <DefineConstants>TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <ItemGroup>
+        <Reference Include="System" />
+        <Reference Include="System.Core" />
+        <Reference Include="System.Data" />
+        <Reference Include="System.Xml" />
+    </ItemGroup>
+    <ItemGroup>
+        <Compile Include="Program.cs" />
+        <Compile Include="Properties\AssemblyInfo.cs" />
+        <Compile Include="RefsPrinter.cs" />
+    </ItemGroup>
+    <ItemGroup>
+      <Content Include="TestData\.git\config" />
+      <Content Include="TestData\.git\description" />
+      <Content Include="TestData\.git\HEAD" />
+      <Content Include="TestData\.git\hooks\applypatch-msg.sample" />
+      <Content Include="TestData\.git\hooks\commit-msg.sample" />
+      <Content Include="TestData\.git\hooks\fsmonitor-watchman.sample" />
+      <Content Include="TestData\.git\hooks\post-update.sample" />
+      <Content Include="TestData\.git\hooks\pre-applypatch.sample" />
+      <Content Include="TestData\.git\hooks\pre-commit.sample" />
+      <Content Include="TestData\.git\hooks\pre-merge-commit.sample" />
+      <Content Include="TestData\.git\hooks\pre-push.sample" />
+      <Content Include="TestData\.git\hooks\pre-rebase.sample" />
+      <Content Include="TestData\.git\hooks\pre-receive.sample" />
+      <Content Include="TestData\.git\hooks\prepare-commit-msg.sample" />
+      <Content Include="TestData\.git\hooks\push-to-checkout.sample" />
+      <Content Include="TestData\.git\hooks\update.sample" />
+      <Content Include="TestData\.git\index" />
+      <Content Include="TestData\.git\info\exclude" />
+      <Content Include="TestData\.git\objects\46\756120bf310db406da38df7a7ec1a7a2623aa9" />
+      <Content Include="TestData\.git\objects\ad\d57be707d1a627fd960286263733b8f2df2dcb" />
+      <Content Include="TestData\.git\objects\bf\9bb74b8f4eed7e2ba6d397b64986bd68b032ed" />
+      <Content Include="TestData\.git\objects\c1\6f5b7e6ca00edb079b85c7418fe602e21c65cc" />
+      <Content Include="TestData\.git\objects\c8\0341dbca56431d1c1f506cc797d0563e98d272" />
+      <Content Include="TestData\.git\objects\ce\f82f5ad153210ef8f3a8fecb690a850f20e7f9" />
+      <Content Include="TestData\.git\objects\ec\7e72ae6eb3c6099b9d2965a86282c41aa43bec" />
+      <Content Include="TestData\.git\packed-refs" />
+      <Content Include="TestData\.git\refs\heads\DirectX11" />
+      <Content Include="TestData\.git\refs\heads\master" />
+      <Content Include="TestData\.git\refs\remotes\origin2\master" />
+      <Content Include="TestData\.git\refs\remotes\origin\master" />
+      <Content Include="TestData\.git\refs\tags\v1.0" />
+      <Content Include="TestData\.git\refs\tags\v1.1" />
+    </ItemGroup>
+    <ItemGroup>
+      <Folder Include="TestData\.git\objects\info" />
+      <Folder Include="TestData\.git\objects\pack" />
+    </ItemGroup>
+    <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+    <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+         Other similar extension points exist, see Microsoft.Common.targets.
+    <Target Name="BeforeBuild">
+    </Target>
+    <Target Name="AfterBuild">
+    </Target>
+    -->
+
+</Project>
