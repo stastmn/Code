@@ -8,7 +8,7 @@ namespace refs
         private static string _gitPath = @".\\.git";
         private static string _gitDirectoryPath;
 
-        public static void PrintRefs(string gitDirectoryPath)
+        public static void PrintRefs(string gitDirectoryPath = "")
         {
             _gitDirectoryPath = gitDirectoryPath;
             _gitPath = gitDirectoryPath + _gitPath;

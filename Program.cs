@@ -4,12 +4,13 @@ namespace refs
 {
     internal static class Program
     {
-        public static void Main(string[] gitDirectoryPath)
+        public static void Main(string[] args)
         {
             try
             {
-                if (gitDirectoryPath.Length != 1) throw new Exception();
-                RefsPrinter.PrintRefs(gitDirectoryPath[0]);
+                var path = "";
+                if (args.Length == 1) path = args[0];
+                RefsPrinter.PrintRefs(path);
             }
             catch (Exception ex)
             {
